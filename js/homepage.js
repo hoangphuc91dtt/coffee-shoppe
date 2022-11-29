@@ -2,6 +2,7 @@ const cards = document.querySelector(".popular__card-list");
 const btnshop = document.querySelector(".navbar__shop");
 const btngiohang = document.querySelector(".navbar__giohang");
 const addgiohang = document.querySelector("#giohang");
+const hiddenElement = document.querySelectorAll(".hidden");
 
 const arrGioHang = [];
 function renderCardInCart(obj) {
@@ -30,14 +31,14 @@ function renderHomepage() {
         .then((data) => {
             cards.innerHTML = data
                 .map(
-                    (obj) => ` <div class="popular__card" card-id="${obj.id}">
+                    (obj) => ` <div class="popular__card " card-id="${obj.id}" >
         <div class="popular__rating">
             <img
-                src="./img/icon/rating_product.png"
+                src="./img/rating_product.png"
                 alt=""
             />
         </div>
-        <div class="popular__card--img">
+        <div class="popular__card--img ">
             <img
                 src=${obj.img}
                 alt=""
@@ -54,7 +55,7 @@ function renderHomepage() {
             <div class="popular__card--btn">Cold</div>
             <div class="popular__card--buy">
                 <img
-                    src="./img/image/card.png"
+                    src="./img/card.png"
                     alt=""
                 />
             </div>
@@ -104,10 +105,26 @@ function cleangiohang() {
     });
 }
 
+function hiddenElm() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show");
+            }
+        });
+    });
+    hiddenElement.forEach((el) => observer.observe(el));
+}
+
 function homepage() {
     renderHomepage();
     giohang();
     muahang();
+    hiddenElm();
 }
 
 homepage();

@@ -1,0 +1,12 @@
+// button
+@mixin button($color: $beeBg) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 32px;
+    gap: 10px;
+    border-radius: 33px;
+    background-color: $brown;
+    color: $color;
+}
