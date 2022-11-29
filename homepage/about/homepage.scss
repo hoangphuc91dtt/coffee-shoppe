@@ -54,26 +54,22 @@ a {
     }
     &__hero {
         width: 100%;
-        height: 970px;
-        padding: 158px 122px 396px 135px;
+        height: 870px;
+        padding: 158px 122px 158px 135px;
         display: flex;
         background-color: $beeBg;
         position: relative;
         // background-attachment: fixed;
-        background-image: url("../img/image/bg-image.png");
+        background-image: url("../img/bg-image.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
     }
     &__popular {
-        padding: 86px;
+        padding: 5%;
         @include heading2;
-        position: absolute;
-        top: 780px;
-        right: 35px;
     }
     &__testimonial {
-        margin-top: 400px;
         @include displayFlexCenter(center, space-between, 93px);
     }
     &__footer {
@@ -92,13 +88,13 @@ a {
         padding-right: 240px;
         width: 60%;
         &--headline {
-            @include heading1;
+            @include heading1(64px);
             span {
                 color: $orange;
             }
         }
         &--title {
-            @include cap1;
+            @include cap1(72px);
         }
     }
     &__content-btn {
@@ -124,76 +120,6 @@ a {
     }
 }
 
-.popular {
-    &__section--title {
-        position: absolute;
-        top: -200px;
-    }
-    &__background {
-        height: 367px;
-        width: 1268px;
-        border-radius: 64px;
-        background-color: $chocolateBG;
-        position: relative;
-    }
-    &__card-list {
-        padding: 20px;
-        width: 100%;
-        border-radius: 64px;
-        position: absolute;
-        top: -150px;
-        @include displayFlexCenter(center, space-between, 50px);
-    }
-    &__card {
-        background-color: $light;
-        width: 29%;
-        padding: 25px;
-        border-radius: 12px;
-        filter: drop-shadow(10px 10px 32px rgba(0, 0, 0, 0.25));
-    }
-    &__card:hover {
-        transform: scale(1.02);
-        transition: 0.5s;
-    }
-    &__rating {
-        position: absolute;
-        top: 35px;
-        left: 35px;
-    }
-    &__card--img {
-        margin-bottom: 19px;
-        img {
-            border-radius: 12px;
-        }
-    }
-    &__card--info {
-        @include displayFlexCenter(center, space-between);
-        padding: 0 10px;
-    }
-    &__card--name {
-        @include heading3(16px);
-    }
-    &__card--cost {
-        @include heading3(16px);
-    }
-    &__card--decribe {
-        padding: 0 10px;
-        flex-grow: 1;
-        @include displayFlexCenter(center, flex-start, 30px);
-        position: relative;
-    }
-    &__card--btn {
-        @include frame3(28px);
-        @include cap2;
-    }
-
-    &__card--buy {
-        position: absolute;
-        top: 10px;
-        right: 0;
-    }
-}
-
 .testimonial {
     &__author {
         position: relative;
@@ -201,7 +127,7 @@ a {
     &__bg {
         width: 945px;
         height: 484px;
-        background-image: url(../../img/image/bg-author.png);
+        background-image: url(../../img/bg-author.png);
         padding: 162px 363px 252px 131px;
         &--headline {
             @include heading2(16px);
@@ -269,5 +195,27 @@ a {
                 transition: 0.5s;
             }
         }
+    }
+}
+
+section {
+    display: grid;
+    min-height: 100vh;
+}
+.hidden {
+    opacity: 0;
+    transition: all 2s;
+    filter: blur(5px);
+    transform: translateX(100%);
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media (prefer-reduced-motion) {
+    .hidden {
+        transition: none;
     }
 }

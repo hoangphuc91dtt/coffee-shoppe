@@ -81,6 +81,7 @@
   width: 222px;
   border-radius: 35px;
   padding: 11px 52px;
+  border: none;
 }
 .navbar__look img {
   position: absolute;
@@ -123,22 +124,20 @@
 }
 
 .popular__section--title {
-  position: absolute;
-  top: -200px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .popular__background {
-  height: 367px;
-  width: 1268px;
+  height: 350px;
+  width: 100%;
   border-radius: 64px;
   background-color: #f9d9aa;
-  position: relative;
 }
 .popular__card-list {
   padding: 20px;
   width: 100%;
   border-radius: 64px;
-  position: absolute;
-  top: -150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -150,6 +149,15 @@
   padding: 25px;
   border-radius: 12px;
   filter: drop-shadow(10px 10px 32px rgba(0, 0, 0, 0.25));
+}
+.popular__card:nth-child(2) {
+  transition-delay: 200ms;
+}
+.popular__card:nth-child(3) {
+  transition-delay: 400ms;
+}
+.popular__card:nth-child(4) {
+  transition-delay: 600ms;
 }
 .popular__card:hover {
   transform: scale(1.02);
@@ -291,30 +299,26 @@ a {
 }
 .homepage__hero {
   width: 100%;
-  height: 970px;
-  padding: 158px 122px 396px 135px;
+  height: 870px;
+  padding: 158px 122px 158px 135px;
   display: flex;
   background-color: rgb(246, 235, 218);
   position: relative;
-  background-image: url("../img/image/bg-image.png");
+  background-image: url("../img/bg-image.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .homepage__popular {
-  padding: 86px;
+  padding: 5%;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
   margin-bottom: 24px;
   line-height: 48px;
-  position: absolute;
-  top: 780px;
-  right: 35px;
 }
 .homepage__testimonial {
-  margin-top: 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -340,7 +344,7 @@ a {
   font-weight: 600;
   font-size: 48px;
   line-height: 72px;
-  margin-bottom: 24px;
+  margin-bottom: 64px;
 }
 .hero__content--headline span {
   color: #ff912b;
@@ -351,7 +355,7 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
-  margin-bottom: 32px;
+  margin-bottom: 72px;
 }
 .hero__content-btn {
   display: flex;
@@ -391,111 +395,13 @@ a {
   transition: 0.5s;
 }
 
-.popular__section--title {
-  position: absolute;
-  top: -200px;
-}
-.popular__background {
-  height: 367px;
-  width: 1268px;
-  border-radius: 64px;
-  background-color: #f9d9aa;
-  position: relative;
-}
-.popular__card-list {
-  padding: 20px;
-  width: 100%;
-  border-radius: 64px;
-  position: absolute;
-  top: -150px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 50px;
-}
-.popular__card {
-  background-color: white;
-  width: 29%;
-  padding: 25px;
-  border-radius: 12px;
-  filter: drop-shadow(10px 10px 32px rgba(0, 0, 0, 0.25));
-}
-.popular__card:hover {
-  transform: scale(1.02);
-  transition: 0.5s;
-}
-.popular__rating {
-  position: absolute;
-  top: 35px;
-  left: 35px;
-}
-.popular__card--img {
-  margin-bottom: 19px;
-}
-.popular__card--img img {
-  border-radius: 12px;
-}
-.popular__card--info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0;
-  padding: 0 10px;
-}
-.popular__card--name {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  margin-bottom: 16px;
-  line-height: 36px;
-}
-.popular__card--cost {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  margin-bottom: 16px;
-  line-height: 36px;
-}
-.popular__card--decribe {
-  padding: 0 10px;
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 30px;
-  position: relative;
-}
-.popular__card--btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10px;
-  border: 2px solid #ff912b;
-  margin-bottom: 28px;
-  border-radius: 8px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 24px;
-  line-height: 24px;
-}
-.popular__card--buy {
-  position: absolute;
-  top: 10px;
-  right: 0;
-}
-
 .testimonial__author {
   position: relative;
 }
 .testimonial__bg {
   width: 945px;
   height: 484px;
-  background-image: url(../../img/image/bg-author.png);
+  background-image: url(../../img/bg-author.png);
   padding: 162px 363px 252px 131px;
 }
 .testimonial__bg--headline {
@@ -592,6 +498,30 @@ a {
 .footer__order--btn:hover {
   transform: scale(1.02);
   transition: 0.5s;
+}
+
+section {
+  display: grid;
+  min-height: 100vh;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 2s;
+  filter: blur(5px);
+  transform: translateX(100%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media (prefer-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
