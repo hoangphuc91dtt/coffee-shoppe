@@ -1,0 +1,273 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+body {
+    line-height: 1.5;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+    outline: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    scroll-behavior: smooth;
+}
+.homepage {
+    width: 100%;
+    position: relative;
+    &__navbar {
+        width: 100%;
+        height: 80px;
+        padding: 36px 135px;
+        z-index: 10000;
+        position: fixed;
+        @include displayFlexCenter(flex-start, space-between, 32px);
+        background-color: $beeBg;
+    }
+    &__hero {
+        width: 100%;
+        height: 970px;
+        padding: 158px 122px 396px 135px;
+        display: flex;
+        background-color: $beeBg;
+        position: relative;
+        // background-attachment: fixed;
+        background-image: url("../img/image/bg-image.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    &__popular {
+        padding: 86px;
+        @include heading2;
+        position: absolute;
+        top: 780px;
+        right: 35px;
+    }
+    &__testimonial {
+        margin-top: 400px;
+        @include displayFlexCenter(center, space-between, 93px);
+    }
+    &__footer {
+        padding: 135px 120px;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.hero {
+    &__content {
+        padding-right: 240px;
+        width: 60%;
+        &--headline {
+            @include heading1;
+            span {
+                color: $orange;
+            }
+        }
+        &--title {
+            @include cap1;
+        }
+    }
+    &__content-btn {
+        @include displayFlexCenter(center, none, $gap: 50px);
+        &--order {
+            @include button;
+        }
+        &--frame {
+            @include cap3(0px);
+            color: $orange;
+        }
+    }
+    &__img-hero {
+        width: 40%;
+        z-index: 100;
+        img {
+            width: 526px;
+        }
+    }
+    &__content-btn--order:hover {
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+}
+
+.popular {
+    &__section--title {
+        position: absolute;
+        top: -200px;
+    }
+    &__background {
+        height: 367px;
+        width: 1268px;
+        border-radius: 64px;
+        background-color: $chocolateBG;
+        position: relative;
+    }
+    &__card-list {
+        padding: 20px;
+        width: 100%;
+        border-radius: 64px;
+        position: absolute;
+        top: -150px;
+        @include displayFlexCenter(center, space-between, 50px);
+    }
+    &__card {
+        background-color: $light;
+        width: 29%;
+        padding: 25px;
+        border-radius: 12px;
+        filter: drop-shadow(10px 10px 32px rgba(0, 0, 0, 0.25));
+    }
+    &__card:hover {
+        transform: scale(1.02);
+        transition: 0.5s;
+    }
+    &__rating {
+        position: absolute;
+        top: 35px;
+        left: 35px;
+    }
+    &__card--img {
+        margin-bottom: 19px;
+        img {
+            border-radius: 12px;
+        }
+    }
+    &__card--info {
+        @include displayFlexCenter(center, space-between);
+        padding: 0 10px;
+    }
+    &__card--name {
+        @include heading3(16px);
+    }
+    &__card--cost {
+        @include heading3(16px);
+    }
+    &__card--decribe {
+        padding: 0 10px;
+        flex-grow: 1;
+        @include displayFlexCenter(center, flex-start, 30px);
+        position: relative;
+    }
+    &__card--btn {
+        @include frame3(28px);
+        @include cap2;
+    }
+
+    &__card--buy {
+        position: absolute;
+        top: 10px;
+        right: 0;
+    }
+}
+
+.testimonial {
+    &__author {
+        position: relative;
+    }
+    &__bg {
+        width: 945px;
+        height: 484px;
+        background-image: url(../../img/image/bg-author.png);
+        padding: 162px 363px 252px 131px;
+        &--headline {
+            @include heading2(16px);
+        }
+        &--title {
+            @include cap1;
+        }
+    }
+    &__author-list {
+        width: 871px;
+        height: 484px;
+        position: absolute;
+        right: 0;
+        padding: 102px 23px 102px 0;
+        @include displayFlexCenter($gap: 85px);
+    }
+    &__author--info {
+        position: absolute;
+        background-color: $lement;
+        top: 165px;
+        left: 30px;
+        width: 226.5px;
+        height: 86.23px;
+        border-radius: 2px;
+        padding: 8px 12px;
+    }
+    &__author--name {
+        @include cap1(0px);
+    }
+    &__author--title {
+        @include cap3;
+    }
+}
+
+.footer {
+    &__content {
+        position: absolute;
+        top: 40%;
+        left: 30%;
+    }
+    &__sub {
+        @include heading2;
+        color: $beeBg;
+    }
+    &__order {
+        position: absolute;
+        @include displayFlexCenter($gap: 0px);
+        margin-left: 40px;
+        input {
+            height: 54px;
+            width: 486px;
+            border-radius: 42px;
+            padding: 20px;
+        }
+        &--btn {
+            position: absolute;
+            right: 5px;
+            background-color: $brown;
+            color: $beeBg;
+            padding: 10px 20px;
+            border-radius: 42px;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.02);
+                transition: 0.5s;
+            }
+        }
+    }
+}
