@@ -1,5 +1,5 @@
 // button
-@mixin button($color: $beeBg) {
+@mixin button($color: $lement, $width: 200px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -9,4 +9,9 @@
     border-radius: 33px;
     background-color: $brown;
     color: $color;
+    width: $width;
+}
+@mixin buttobHover {
+    transform: scale(1.1);
+    transition: 0.5s;
 }

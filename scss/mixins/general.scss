@@ -19,16 +19,16 @@
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
-    margin-bottom: $mb;
     line-height: 48px;
+    margin-bottom: $mb;
 }
 @mixin heading3($mb: 24px) {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    margin-bottom: $mb;
     line-height: 36px;
+    margin-bottom: $mb;
 }
 
 @mixin cap4($mb: 24px) {
@@ -36,8 +36,8 @@
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
-    margin-bottom: $mb;
     line-height: 18px;
+    margin-bottom: $mb;
 }
 @mixin cap3($mb: 24px) {
     font-family: "Poppins";
@@ -53,8 +53,8 @@
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    margin-bottom: $mb;
     line-height: 24px;
+    margin-bottom: $mb;
 }
 
 @mixin cap1($mb: 32px) {

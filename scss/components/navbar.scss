@@ -1,11 +1,4 @@
 .navbar {
-    width: 100%;
-    height: 80px;
-    padding: 36px 135px;
-    z-index: 10000;
-    position: fixed;
-    @include displayFlexCenter(flex-start, space-between, 32px);
-    background-color: $beeBg;
     &__logo {
         width: 150px;
         height: 30px;
@@ -23,30 +16,12 @@
     }
 
     &__link {
-        &--about {
-            @include cap1;
-            color: $orange;
-        }
-        &--about:hover {
-            transform: scale(1.2);
-            transition: 0.5s;
-        }
-        &--product {
-            @include cap1;
-            color: $brown;
-        }
-        &--product:hover {
-            transform: scale(1.2);
-            transition: 0.5s;
-        }
-        &--delivery {
-            @include cap1;
-            color: $brown;
-        }
-        &--delivery:hover {
-            transform: scale(1.2);
-            transition: 0.5s;
-        }
+        @include cap1;
+        color: $brown;
+    }
+    &__link:hover {
+        transform: scale(1.2);
+        transition: 0.5s;
     }
     &__buy {
         @include displayFlexCenter(center, space-between, 32px);
@@ -84,7 +59,7 @@
         border-radius: 20px;
         padding: 20px;
         &--sanpham {
-            @include displayFlexCenter(center, space-between, 30px);
+            @include displayFlexCenter(center, space-between, 10px);
         }
         &--image {
             width: 100px;

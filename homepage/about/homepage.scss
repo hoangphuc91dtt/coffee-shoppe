@@ -10,6 +10,8 @@
 }
 body {
     line-height: 1.5;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 img,
 picture,
@@ -38,10 +40,13 @@ a {
     text-decoration: none;
 }
 .container {
-    scroll-behavior: smooth;
+    position: relative;
+    min-width: 1440px;
+    min-height: 200px;
 }
 .homepage {
     width: 100%;
+    height: 100vh;
     position: relative;
     &__navbar {
         width: 100%;
@@ -50,16 +55,15 @@ a {
         z-index: 10000;
         position: fixed;
         @include displayFlexCenter(flex-start, space-between, 32px);
-        background-color: $beeBg;
     }
     &__hero {
         width: 100%;
-        height: 870px;
+        height: 840px;
         padding: 158px 122px 158px 135px;
         display: flex;
         background-color: $beeBg;
         position: relative;
-        // background-attachment: fixed;
+        background-attachment: fixed;
         background-image: url("../img/bg-image.png");
         background-repeat: no-repeat;
         background-position: center;
@@ -73,19 +77,38 @@ a {
         @include displayFlexCenter(center, space-between, 93px);
     }
     &__footer {
-        padding: 135px 120px;
-        position: relative;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        margin: 135px 120px;
+        border-radius: 50px;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../img/unsplash_ftA71vetxuo.png);
+    }
+    &__howto {
+        padding: 120px 135px;
+    }
+    &__about {
+        width: 100%;
+        height: 484px;
+        padding: 84px 290px;
+        background-image: url(../img/bg-image-about.png);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    &__menu {
+        padding: 120px 146px;
+        &__title {
+            @include heading2;
         }
     }
 }
 
 .hero {
     &__content {
-        padding-right: 240px;
+        padding-right: 293px;
         width: 60%;
         &--headline {
             @include heading1(64px);
@@ -93,6 +116,7 @@ a {
                 color: $orange;
             }
         }
+
         &--title {
             @include cap1(72px);
         }
@@ -100,7 +124,7 @@ a {
     &__content-btn {
         @include displayFlexCenter(center, none, $gap: 50px);
         &--order {
-            @include button;
+            @include button($width: 170px);
         }
         &--frame {
             @include cap3(0px);
@@ -110,13 +134,14 @@ a {
     &__img-hero {
         width: 40%;
         z-index: 100;
+        animation: scale-hidden 6s infinite alternate;
+
         img {
             width: 526px;
         }
     }
     &__content-btn--order:hover {
-        transform: scale(1.1);
-        transition: 0.5s;
+        @include buttobHover;
     }
 }
 
@@ -127,8 +152,10 @@ a {
     &__bg {
         width: 945px;
         height: 484px;
-        background-image: url(../../img/bg-author.png);
         padding: 162px 363px 252px 131px;
+        background-image: url(../../img/bg-author.png);
+        border-radius: 0 20px 20px 0;
+        background-attachment: fixed;
         &--headline {
             @include heading2(16px);
         }
@@ -162,6 +189,52 @@ a {
     }
 }
 
+.howto {
+    &__title {
+        @include heading2(48px);
+    }
+    &__frames {
+        @include displayFlexCenter(center, space-between, 30px);
+        padding: 16px 65px;
+    }
+    &__frame {
+        &--line {
+            @include heading3;
+        }
+        &--sub {
+            @include cap1;
+        }
+    }
+}
+
+.about {
+    @include displayFlexCenter(center, flex-end);
+    &__bg-image {
+        margin-top: -170px;
+        width: 50%;
+    }
+    &__content {
+        width: 50%;
+        &--headline {
+            @include heading1(24px);
+        }
+        &--line {
+            @include heading3(16px);
+            letter-spacing: 0.04em;
+        }
+        &--subline {
+            @include cap1(32px);
+            letter-spacing: 0.04em;
+        }
+        &--btn-get {
+            @include button;
+        }
+        &--btn-get:hover {
+            @include buttobHover;
+        }
+    }
+}
+
 .footer {
     &__content {
         position: absolute;
@@ -179,8 +252,8 @@ a {
         input {
             height: 54px;
             width: 486px;
-            border-radius: 42px;
             padding: 20px;
+            border-radius: 42px;
         }
         &--btn {
             position: absolute;
@@ -197,25 +270,31 @@ a {
         }
     }
 }
-
+.active {
+    color: $orange;
+}
 section {
     display: grid;
     min-height: 100vh;
+    scroll-snap-align: start;
 }
 .hidden {
     opacity: 0;
-    transition: all 2s;
-    filter: blur(5px);
-    transform: translateX(100%);
+    transition: all 1s;
+    filter: blur(1px);
+    transform: translateY(10%);
 }
 .show {
     opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
-@media (prefer-reduced-motion) {
-    .hidden {
-        transition: none;
+@keyframes scale-hidden {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
     }
 }
