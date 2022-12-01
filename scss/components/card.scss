@@ -1,8 +1,7 @@
 .popular {
     &__section--title {
-        text-align: center;
         margin-bottom: 30px;
-        margin-top: 30px;
+        margin-top: 35px;
     }
     &__background {
         height: 350px;
@@ -10,11 +9,14 @@
         border-radius: 64px;
         background-color: $chocolateBG;
     }
-    &__card-list {
+    &__card-list,
+    &__card-list2 {
+        display: grid;
         padding: 20px;
         width: 100%;
         border-radius: 64px;
         @include displayFlexCenter(center, space-between, 50px);
+        flex-wrap: wrap;
     }
     &__card {
         background-color: $light;
@@ -22,16 +24,20 @@
         padding: 25px;
         border-radius: 12px;
         filter: drop-shadow(10px 10px 32px rgba(0, 0, 0, 0.25));
+        &--subline {
+            @include cap3;
+        }
     }
-    &__card:nth-child(2) {
+    &__card:first-child {
         transition-delay: 200ms;
     }
-    &__card:nth-child(3) {
+    &__card:nth-child(2) {
         transition-delay: 400ms;
     }
-    &__card:nth-child(4) {
+    &__card:nth-child(3) {
         transition-delay: 600ms;
     }
+
     &__card:hover {
         transform: scale(1.02);
         transition: 0.5s;
