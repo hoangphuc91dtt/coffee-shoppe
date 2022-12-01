@@ -68,7 +68,6 @@ a {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        animation: scale-hidden 6s infinite alternate;
     }
     &__popular {
         padding: 5%;
@@ -78,27 +77,32 @@ a {
         @include displayFlexCenter(center, space-between, 93px);
     }
     &__footer {
-        padding: 135px 120px;
-        position: relative;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50px;
-        }
+        margin: 135px 120px;
+        border-radius: 50px;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../img/unsplash_ftA71vetxuo.png);
     }
     &__howto {
         padding: 120px 135px;
     }
     &__about {
+        width: 100%;
+        height: 484px;
         padding: 84px 290px;
         background-image: url(../img/bg-image-about.png);
+        background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        background-attachment: fixed;
-        height: 484px;
-        width: 100%;
+    }
+    &__menu {
+        padding: 120px 146px;
+        &__title {
+            @include heading2;
+        }
     }
 }
 
@@ -130,6 +134,8 @@ a {
     &__img-hero {
         width: 40%;
         z-index: 100;
+        animation: scale-hidden 6s infinite alternate;
+
         img {
             width: 526px;
         }
@@ -146,8 +152,10 @@ a {
     &__bg {
         width: 945px;
         height: 484px;
-        background-image: url(../../img/bg-author.png);
         padding: 162px 363px 252px 131px;
+        background-image: url(../../img/bg-author.png);
+        border-radius: 0 20px 20px 0;
+        background-attachment: fixed;
         &--headline {
             @include heading2(16px);
         }
@@ -178,70 +186,6 @@ a {
     }
     &__author--title {
         @include cap3;
-    }
-}
-
-.footer {
-    &__content {
-        position: absolute;
-        top: 40%;
-        left: 30%;
-    }
-    &__sub {
-        @include heading2;
-        color: $beeBg;
-    }
-    &__order {
-        position: absolute;
-        @include displayFlexCenter($gap: 0px);
-        margin-left: 40px;
-        input {
-            height: 54px;
-            width: 486px;
-            border-radius: 42px;
-            padding: 20px;
-        }
-        &--btn {
-            position: absolute;
-            right: 5px;
-            background-color: $brown;
-            color: $beeBg;
-            padding: 10px 20px;
-            border-radius: 42px;
-            cursor: pointer;
-            &:hover {
-                transform: scale(1.02);
-                transition: 0.5s;
-            }
-        }
-    }
-}
-.active {
-    color: $orange;
-}
-section {
-    display: grid;
-    min-height: 100vh;
-    scroll-snap-align: start;
-}
-.hidden {
-    opacity: 0;
-    transition: all 1s;
-    filter: blur(1px);
-    transform: translateY(10%);
-}
-.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-}
-
-@keyframes scale-hidden {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.01);
     }
 }
 
@@ -291,9 +235,66 @@ section {
     }
 }
 
-.menu {
-    padding: 120px 146px;
-    &__title {
+.footer {
+    &__content {
+        position: absolute;
+        top: 40%;
+        left: 30%;
+    }
+    &__sub {
         @include heading2;
+        color: $beeBg;
+    }
+    &__order {
+        position: absolute;
+        @include displayFlexCenter($gap: 0px);
+        margin-left: 40px;
+        input {
+            height: 54px;
+            width: 486px;
+            padding: 20px;
+            border-radius: 42px;
+        }
+        &--btn {
+            position: absolute;
+            right: 5px;
+            background-color: $brown;
+            color: $beeBg;
+            padding: 10px 20px;
+            border-radius: 42px;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.02);
+                transition: 0.5s;
+            }
+        }
+    }
+}
+.active {
+    color: $orange;
+}
+section {
+    display: grid;
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(1px);
+    transform: translateY(10%);
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+@keyframes scale-hidden {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
     }
 }

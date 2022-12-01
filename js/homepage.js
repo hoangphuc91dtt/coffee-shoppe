@@ -11,7 +11,7 @@ const arrGioHang = [];
 function renderCardInCart(obj) {
     arrGioHang.push(obj);
 
-    console.log(arrGioHang);
+    // console.log(arrGioHang);
     addgiohang.innerHTML = arrGioHang
         .map(
             (obj) => `
@@ -174,8 +174,6 @@ function cleangiohang() {
 function hiddenElm() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry);
-
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
             } else {

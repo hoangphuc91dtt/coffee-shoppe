@@ -59,7 +59,7 @@
         border-radius: 20px;
         padding: 20px;
         &--sanpham {
-            @include displayFlexCenter(center, space-between, 30px);
+            @include displayFlexCenter(center, space-between, 10px);
         }
         &--image {
             width: 100px;
