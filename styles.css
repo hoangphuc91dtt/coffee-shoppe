@@ -85,6 +85,30 @@
   display: none;
 }
 
+.container {
+  position: relative;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+  .homepage__navbar {
+    height: 40px;
+  }
+  .homepage__navbar a {
+    font-size: 0.9em;
+  }
+  .hero__content--headline {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    margin-bottom: 8px;
+  }
+}
 .popular__section--title {
   margin-bottom: 30px;
   margin-top: 35px;
@@ -248,12 +272,6 @@ h6 {
 
 a {
   text-decoration: none;
-}
-
-.container {
-  position: relative;
-  min-width: 1440px;
-  min-height: 200px;
 }
 
 .homepage {
