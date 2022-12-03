@@ -1,0 +1,20 @@
+.container {
+    position: relative;
+    min-width: 100%;
+}
+@media (max-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+    .homepage {
+        &__navbar {
+            height: 40px;
+            a {
+                font-size: 0.9em;
+            }
+        }
+    }
+    .hero__content--headline {
+        @include heading1(8px);
+    }
+}
