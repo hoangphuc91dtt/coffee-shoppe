@@ -87,7 +87,7 @@
 
 .container {
   position: relative;
-  max-width: 100%;
+  min-width: 100%;
 }
 
 @media (max-width: 1024px) {
@@ -298,7 +298,7 @@ a {
   background-color: rgb(246, 235, 218);
   position: relative;
   background-attachment: fixed;
-  background-image: url("../img/bg-image.png");
+  background-image: url(/img/bg-image.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -325,7 +325,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(../img/unsplash_ftA71vetxuo.png);
+  background-image: url(/img/unsplash_ftA71vetxuo.png);
 }
 .homepage__howto {
   padding: 120px 135px;
@@ -334,7 +334,7 @@ a {
   width: 100%;
   height: 484px;
   padding: 84px 290px;
-  background-image: url(../img/bg-image-about.png);
+  background-image: url(/img/bg-image-about.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
