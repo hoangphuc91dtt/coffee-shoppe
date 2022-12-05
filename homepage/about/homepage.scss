@@ -122,10 +122,15 @@ a {
         @include displayFlexCenter(center, none, $gap: 50px);
         &--order {
             @include button($width: 200px);
+            cursor: pointer;
         }
         &--frame {
             @include cap3(0px);
             color: $orange;
+            cursor: pointer;
+        }
+        &--order:hover {
+            @include buttobHover;
         }
     }
     &__img-hero {
@@ -136,9 +141,6 @@ a {
         img {
             width: 526px;
         }
-    }
-    &__content-btn--order:hover {
-        @include buttobHover;
     }
 }
 
@@ -227,6 +229,7 @@ a {
         }
         &--btn-get {
             @include button;
+            cursor: pointer;
         }
         &--btn-get:hover {
             @include buttobHover;

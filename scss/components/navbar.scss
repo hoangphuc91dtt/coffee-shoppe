@@ -47,10 +47,11 @@
             transform: scale(1.2);
             transition: 0.5s;
         }
+        cursor: pointer;
     }
 
     &__giohang {
-        width: 400px;
+        width: 450px;
         height: 220px;
         background-color: $chocolateBG;
         position: absolute;
@@ -60,7 +61,17 @@
         padding: 20px;
         overflow-y: scroll;
         &--sanpham {
+            @include cap4($mb: 0px);
             @include displayFlexCenter(center, space-between, 10px);
+            img {
+                width: 50%;
+                height: 50%;
+                object-fit: cover;
+                align-items: center;
+                margin-left: 25%;
+                border-radius: 8px;
+                filter: drop-shadow(6px 5px 2px rgba(0, 0, 0, 0.25));
+            }
         }
         &--image {
             width: 100px;
@@ -70,6 +81,18 @@
                 height: 80%;
                 object-fit: cover;
                 border-radius: 5px;
+            }
+        }
+        &--x {
+            img {
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+                background-color: transparent;
+            }
+            &:hover {
+                transform: rotate(15deg);
+                transition: 0.5s;
             }
         }
     }

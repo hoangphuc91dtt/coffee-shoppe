@@ -16,11 +16,13 @@ function renderCardInCart(obj) {
             (obj) => `
     <div class="navbar__giohang--sanpham">
         <div class="navbar__giohang--image">
-            <img src="${obj.img}" alt="" />
+            <img src=${obj.img} alt="" />
         </div>
         <div class="navbar__giohang--name">${obj.name}</div>
         <div class="navbar__giohang--cost">${obj.cost} K</div>
-        <div class="navbar__giohang--x"> <button class="clean">X</button> </div>
+        <div class="navbar__giohang--x">              
+            <img src="./img/rubbish-bin.png" alt="" />
+         </div>
     </div>
     `
         )
@@ -55,7 +57,7 @@ function renderCoffee() {
                     </div>
                     <div class="popular__card--decribe">
                     <div class="popular__card--subline">
-                        ${obj.subline}
+                        ${obj.feedback}
                     </div>
                         <div class="popular__card--buy">
                             <img
@@ -116,7 +118,6 @@ function renderCoffeebest() {
             muahangBestCoffee();
         });
 }
-//
 function renderUser() {
     fetch("https://6369cb9028cd16bba72488d3.mockapi.io/user")
         .then((res) => res.json())
@@ -159,7 +160,12 @@ function getBestCoffeeId(id) {
 }
 
 function giohang() {
+    const btnYourCoffee = document.querySelector(".about__content--btn-get");
     btnshop.addEventListener("click", (e) => {
+        e.preventDefault();
+        btngiohang.classList.toggle("disable");
+    });
+    btnYourCoffee.addEventListener("click", (e) => {
         e.preventDefault();
         btngiohang.classList.toggle("disable");
     });
@@ -184,18 +190,6 @@ function muahangBestCoffee() {
         });
     });
 }
-// !
-// function cleangiohang() {
-//     const clean = document.querySelectorAll(".clean");
-//     const sanpham = document.querySelectorAll(".navbar__giohang--sanpham");
-//     clean.forEach((btn) => {
-//         btn.addEventListener("click", () => {
-//             sanpham.forEach((sp) => {
-//                 sp.innerHTML = "";
-//             });
-//         });
-//     });
-// }
 
 function removeItemGioHang() {
     const timesItems = document.querySelectorAll(".navbar__giohang--x");
@@ -208,7 +202,6 @@ function removeItemGioHang() {
             })
     );
 }
-// scroll
 function hiddenElm() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -242,9 +235,9 @@ function showMoreCard() {
     showMore_btn.addEventListener("click", () => {
         console.log(showMore_btn);
         cardsMenu.classList.toggle("show1");
-        showMore_btn.innerHTML = "Show less";
     });
 }
+
 function homepage() {
     navbarActive();
     renderCoffeebest();
