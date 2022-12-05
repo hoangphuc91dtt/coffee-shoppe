@@ -56,13 +56,14 @@
 }
 .navbar__giohang {
   width: 400px;
-  min-height: 200px;
+  height: 220px;
   background-color: #f9d9aa;
   position: absolute;
   right: 140px;
   top: 80px;
   border-radius: 20px;
   padding: 20px;
+  overflow-y: scroll;
 }
 .navbar__giohang--sanpham {
   display: flex;
@@ -87,27 +88,35 @@
 
 .container {
   position: relative;
-  min-width: 100%;
+  min-width: 1440px;
 }
 
-@media (max-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-  .homepage__navbar {
-    height: 40px;
-  }
-  .homepage__navbar a {
-    font-size: 0.9em;
-  }
-  .hero__content--headline {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 72px;
-    margin-bottom: 8px;
-  }
+.popular__btn-showmore {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 32px;
+  gap: 10px;
+  border-radius: 33px;
+  background-color: #2f2105;
+  color: #ffcb7c;
+  width: 170px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 32px;
+}
+.popular__btn-showmore:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.popular__title {
+  margin-bottom: 30px;
+  margin-top: 35px;
 }
 .popular__section--title {
   margin-bottom: 30px;
@@ -123,19 +132,22 @@
   display: grid;
   padding: 20px;
   width: 100%;
-  border-radius: 64px;
+  border-radius: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
   flex-wrap: wrap;
+  max-height: 970px;
+  overflow: hidden;
+  transition: 1s;
 }
 .popular__card {
   background-color: white;
   width: 29%;
   padding: 25px;
-  border-radius: 12px;
-  filter: drop-shadow(10px 10px 32px rgba(0, 0, 0, 0.25));
+  border-radius: 8px;
+  filter: drop-shadow(10px 10px 9px rgba(0, 0, 0, 0.25));
 }
 .popular__card--subline {
   font-family: "Poppins";
@@ -224,6 +236,10 @@
   position: absolute;
   top: 10px;
   right: 0;
+}
+
+.show1 {
+  max-height: 9000px;
 }
 
 *,
@@ -329,6 +345,7 @@ a {
 }
 .homepage__howto {
   padding: 120px 135px;
+  margin-bottom: 175px;
 }
 .homepage__about {
   width: 100%;
@@ -391,7 +408,7 @@ a {
   border-radius: 33px;
   background-color: #2f2105;
   color: #ffcb7c;
-  width: 170px;
+  width: 200px;
 }
 .hero__content-btn--frame {
   font-family: "Poppins";
@@ -486,7 +503,7 @@ a {
   font-weight: 600;
   font-size: 32px;
   line-height: 48px;
-  margin-bottom: 48px;
+  margin-bottom: 108px;
 }
 .howto__frames {
   display: flex;
@@ -516,10 +533,10 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 0;
+  gap: 100px;
 }
 .about__bg-image {
-  margin-top: -170px;
+  margin-top: -200px;
   width: 50%;
 }
 .about__content {
@@ -622,7 +639,7 @@ section {
 
 .hidden {
   opacity: 0;
-  transition: all 1s;
+  transition: all 1.5s;
   filter: blur(1px);
   transform: translateY(10%);
 }

@@ -51,13 +51,14 @@
 
     &__giohang {
         width: 400px;
-        min-height: 200px;
+        height: 220px;
         background-color: $chocolateBG;
         position: absolute;
         right: 140px;
         top: 80px;
         border-radius: 20px;
         padding: 20px;
+        overflow-y: scroll;
         &--sanpham {
             @include displayFlexCenter(center, space-between, 10px);
         }

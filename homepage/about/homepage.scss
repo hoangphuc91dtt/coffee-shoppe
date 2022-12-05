@@ -83,6 +83,7 @@ a {
     }
     &__howto {
         padding: 120px 135px;
+        margin-bottom: 175px;
     }
     &__about {
         width: 100%;
@@ -120,7 +121,7 @@ a {
     &__content-btn {
         @include displayFlexCenter(center, none, $gap: 50px);
         &--order {
-            @include button($width: 170px);
+            @include button($width: 200px);
         }
         &--frame {
             @include cap3(0px);
@@ -152,6 +153,8 @@ a {
         background-image: url("./img/bg-author.png");
         border-radius: 0 20px 20px 0;
         background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
         &--headline {
             @include heading2(16px);
         }
@@ -187,7 +190,7 @@ a {
 
 .howto {
     &__title {
-        @include heading2(48px);
+        @include heading2(108px);
     }
     &__frames {
         @include displayFlexCenter(center, space-between, 30px);
@@ -204,9 +207,9 @@ a {
 }
 
 .about {
-    @include displayFlexCenter(center, flex-end);
+    @include displayFlexCenter(center, flex-end, 100px);
     &__bg-image {
-        margin-top: -170px;
+        margin-top: -200px;
         width: 50%;
     }
     &__content {
@@ -276,7 +279,7 @@ section {
 }
 .hidden {
     opacity: 0;
-    transition: all 1s;
+    transition: all 1.5s;
     filter: blur(1px);
     transform: translateY(10%);
 }
