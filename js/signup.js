@@ -20,10 +20,14 @@ btnSignup.addEventListener("click", (e) => {
     })
         .then((res) => res.json())
         .then((data) => {
+            let location = document.querySelector(".location");
             if (!username.value || !email.value || !password.value) {
-                alert("vui long nhap day du thong tin");
+                location.innerHTML = "<h4 >Vui lòng điền thông tin</h4>";
             } else {
-                alert("dang ky thanh cong");
+                location.innerHTML = `<h4 style="color: #03e9f4" >Đăng kí thành công</h4>`;
+                setTimeout(() => {
+                    window.location.href = "../login/signup.html";
+                }, 4000);
             }
         })
         .catch((error) => console.log(error));
