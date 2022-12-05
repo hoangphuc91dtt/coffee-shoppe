@@ -44,6 +44,16 @@
             @include cap3;
         }
     }
+    &__card-best {
+        background-color: $light;
+        width: 29%;
+        padding: 25px;
+        border-radius: 8px;
+        filter: drop-shadow(10px 10px 9px rgba(0, 0, 0, 0.25));
+        &--subline {
+            @include cap3;
+        }
+    }
     &__card:first-child {
         transition-delay: 200ms;
     }
@@ -55,6 +65,10 @@
     }
 
     &__card:hover {
+        transform: scale(1.02);
+        transition: 0.5s;
+    }
+    &__card-best:hover {
         transform: scale(1.02);
         transition: 0.5s;
     }

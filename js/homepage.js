@@ -78,7 +78,9 @@ function renderCoffeebest() {
         .then((data) => {
             cards.innerHTML = data
                 .map(
-                    (obj) => ` <div class="popular__card" card-id="${obj.id}" >
+                    (
+                        obj
+                    ) => ` <div class="popular__card-best" card-idBest="${obj.id}" >
         <div class="popular__rating">
             <img
                 src="./img/rating_product.png"
@@ -174,10 +176,10 @@ function muahang() {
 }
 
 function muahangBestCoffee() {
-    const btncard = document.querySelectorAll(".popular__card");
+    const btncard = document.querySelectorAll(".popular__card-best");
     btncard.forEach((btn) => {
         btn.addEventListener("click", () => {
-            const idCard = btn.getAttribute("card-id");
+            const idCard = btn.getAttribute("card-idBest");
             getBestCoffeeId(idCard);
         });
     });
@@ -195,7 +197,6 @@ function muahangBestCoffee() {
 //     });
 // }
 
-//
 function removeItemGioHang() {
     const timesItems = document.querySelectorAll(".navbar__giohang--x");
 

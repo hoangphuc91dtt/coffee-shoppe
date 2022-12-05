@@ -157,6 +157,21 @@
   line-height: 21px;
   margin-bottom: 24px;
 }
+.popular__card-best {
+  background-color: white;
+  width: 29%;
+  padding: 25px;
+  border-radius: 8px;
+  filter: drop-shadow(10px 10px 9px rgba(0, 0, 0, 0.25));
+}
+.popular__card-best--subline {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 24px;
+}
 .popular__card:first-child {
   transition-delay: 200ms;
 }
@@ -167,6 +182,10 @@
   transition-delay: 600ms;
 }
 .popular__card:hover {
+  transform: scale(1.02);
+  transition: 0.5s;
+}
+.popular__card-best:hover {
   transform: scale(1.02);
   transition: 0.5s;
 }
@@ -442,6 +461,8 @@ a {
   background-image: url("./img/bg-author.png");
   border-radius: 0 20px 20px 0;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .testimonial__bg--headline {
   font-family: "Poppins";
