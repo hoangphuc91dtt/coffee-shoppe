@@ -694,7 +694,9 @@ a {
 }
 .footer__endfoot {
   background-image: url("./img/bg-author.png");
+  background-size: cover;
   padding: 48px 80px 56px 80px;
+  border-radius: 50px 0px 0px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -711,6 +713,7 @@ a {
   align-items: center;
   gap: 24px;
   color: #2f2105;
+  cursor: pointer;
 }
 .footer__mxh img {
   width: 100%;

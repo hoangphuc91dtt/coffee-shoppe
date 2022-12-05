@@ -275,8 +275,9 @@ a {
     }
     &__endfoot {
         background-image: url("./img/bg-author.png");
+        background-size: cover;
         padding: 48px 80px 56px 80px;
-
+        border-radius: 50px 0px 0px 0px;
         @include displayFlexCenter(center, space-between);
         color: $brown;
     }
@@ -292,6 +293,7 @@ a {
             height: 100%;
             object-fit: cover;
         }
+        cursor: pointer;
     }
 }
 .active {
