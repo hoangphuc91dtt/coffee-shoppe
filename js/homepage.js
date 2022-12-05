@@ -1,40 +1,23 @@
 const authors = document.querySelector(".testimonial__author-list");
 const cards = document.querySelector(".popular__card-list");
 const cardsMenu = document.querySelector(".popular__card-list2");
-const btnshop = document.querySelector(".navbar__shop");
 const btngiohang = document.querySelector(".navbar__giohang");
 const addgiohang = document.querySelector("#giohang");
 const hiddenElement = document.querySelectorAll(".hidden");
 const navbarHidden = document.querySelectorAll(".navbar__link");
+const btnshop = document.querySelector(".navbar__shop");
+const btnYourCoffee = document.querySelector(".about__content--btn-get");
+const showMore_btn = document.querySelector(".popular__btn-showmore");
 
-const arrGioHang = [];
-function renderCardInCart(obj) {
-    arrGioHang.push(obj);
-
-    // console.log(arrGioHang);
-    addgiohang.innerHTML = arrGioHang
-        .map(
-            (obj) => `
-    <div class="navbar__giohang--sanpham">
-        <div class="navbar__giohang--image">
-            <img src="${obj.img}" alt="" />
-        </div>
-        <div class="navbar__giohang--name">${obj.name}</div>
-        <div class="navbar__giohang--cost">${obj.cost} K</div>
-        <div class="navbar__giohang--x"> <button class="clean">X</button> </div>
-    </div>
-    `
-        )
-        .join("");
-}
-
-function renderCoffee() {
-    fetch("https://6369cb9028cd16bba72488d3.mockapi.io/coffee")
+function renderCoffeebest() {
+    fetch("https://6369cb9028cd16bba72488d3.mockapi.io/coffee-food")
         .then((res) => res.json())
         .then((data) => {
             cards.innerHTML = data
                 .map(
-                    (obj) => ` <div class="popular__card" card-id="${obj.id}" >
+                    (
+                        obj
+                    ) => ` <div class="popular__card-best" card-idBest="${obj.id}" >
         <div class="popular__rating">
             <img
                 src="./img/rating_product.png"
@@ -67,8 +50,15 @@ function renderCoffee() {
                 )
                 .slice(0, 3)
                 .join("");
+            muahangBestCoffee();
+        });
+}
 
-            //  cards.innerHTML = data
+// vu thien
+function renderCoffee() {
+    fetch("https://6369cb9028cd16bba72488d3.mockapi.io/coffee")
+        .then((res) => res.json())
+        .then((data) => {
             cardsMenu.innerHTML = data
                 .map(
                     (obj) => ` <div class="popular__card " card-id="${obj.id}" >
@@ -92,7 +82,7 @@ function renderCoffee() {
                     </div>
                     <div class="popular__card--decribe">
                     <div class="popular__card--subline">
-                        ${obj.subline}
+                        ${obj.feedback}
                     </div>
                         <div class="popular__card--buy">
                             <img
@@ -103,11 +93,13 @@ function renderCoffee() {
                     </div>
                     </div>`
                 )
-                .slice(4, 13)
                 .join("");
+
             muahang();
         });
 }
+
+// bich ngoc
 function renderUser() {
     fetch("https://6369cb9028cd16bba72488d3.mockapi.io/user")
         .then((res) => res.json())
@@ -134,21 +126,6 @@ function renderUser() {
         });
 }
 
-function getCoffeeId(id) {
-    fetch(`https://6369cb9028cd16bba72488d3.mockapi.io/coffee/${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-            renderCardInCart(data);
-        });
-}
-
-function giohang() {
-    btnshop.addEventListener("click", (e) => {
-        e.preventDefault();
-        btngiohang.classList.toggle("disable");
-    });
-}
-
 function muahang() {
     const btncard = document.querySelectorAll(".popular__card");
     btncard.forEach((btn) => {
@@ -159,18 +136,77 @@ function muahang() {
     });
 }
 
-function cleangiohang() {
-    const clean = document.querySelectorAll(".clean");
-    const sanpham = document.querySelectorAll(".navbar__giohang--sanpham");
-    clean.forEach((btn) => {
+function muahangBestCoffee() {
+    const btncard = document.querySelectorAll(".popular__card-best");
+    btncard.forEach((btn) => {
         btn.addEventListener("click", () => {
-            sanpham.forEach((sp) => {
-                sp.innerHTML = "";
-            });
+            const idCard = btn.getAttribute("card-idBest");
+            getBestCoffeeId(idCard);
         });
     });
 }
+// lấy id
+function getCoffeeId(id) {
+    fetch(`https://6369cb9028cd16bba72488d3.mockapi.io/coffee/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+            addCardInShop(data);
+        });
+}
+function getBestCoffeeId(id) {
+    fetch(`https://6369cb9028cd16bba72488d3.mockapi.io/coffee-food/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+            addCardInShop(data);
+        });
+}
+//  add card in shop
+const arrGioHang = [];
+function addCardInShop(obj) {
+    arrGioHang.push(obj);
+    addgiohang.innerHTML = arrGioHang
+        .map(
+            (obj) => `
+    <div class="navbar__giohang--sanpham">
+        <div class="navbar__giohang--image">
+            <img src=${obj.img} alt="" />
+        </div>
+        <div class="navbar__giohang--name">${obj.name}</div>
+        <div class="navbar__giohang--cost">${obj.cost} K</div>
+        <div class="navbar__giohang--x">              
+            <img src="./img/rubbish-bin.png" alt="" />
+         </div>
+    </div>
+    `
+        )
+        .join("");
+    removeItemGioHang();
+}
+// di chuyển đến menu
+function giohang() {
+    btnshop.addEventListener("click", (e) => {
+        e.preventDefault();
+        btngiohang.classList.toggle("disable");
+    });
+    btnYourCoffee.addEventListener("click", (e) => {
+        e.preventDefault();
+        btngiohang.classList.toggle("disable");
+    });
+}
+// remove ItemGioHang
 
+function removeItemGioHang() {
+    const timesItems = document.querySelectorAll(".navbar__giohang--x");
+    timesItems.forEach(
+        (timesItem, index) =>
+            (timesItem.onclick = () => {
+                arrGioHang.splice(arrGioHang.indexOf(arrGioHang[index]), 1);
+                timesItem.parentElement.remove();
+            })
+    );
+}
+
+//  scroll secction
 function hiddenElm() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -184,6 +220,7 @@ function hiddenElm() {
     hiddenElement.forEach((el) => observer.observe(el));
 }
 
+// active item navbar
 function navbarActive() {
     navbarHidden.forEach((button) => {
         button.addEventListener("click", () => {
@@ -192,20 +229,29 @@ function navbarActive() {
         });
     });
 }
-
+// active item navbar
 function removeClass() {
     navbarHidden.forEach((button) => {
         button.classList.remove("active");
     });
 }
 
+// btn show more
+function showMoreCard() {
+    showMore_btn.addEventListener("click", () => {
+        console.log(showMore_btn);
+        cardsMenu.classList.toggle("show1");
+    });
+}
+
 function homepage() {
     navbarActive();
+    renderCoffeebest();
     renderCoffee();
     renderUser();
     giohang();
-    muahang();
     hiddenElm();
+    showMoreCard();
 }
 
 homepage();
