@@ -49,6 +49,12 @@
         }
         cursor: pointer;
     }
+    &__login {
+        margin-top: 5px;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
 
     &__giohang {
         width: 450px;
@@ -59,7 +65,7 @@
         border-radius: 20px;
         padding: 10px 20px 10px 10px;
         overflow-y: scroll;
-        background-image: url(../../img/bg-image-about.png);
+        background-image: url(./img/bg-image-about.png);
         background-size: cover;
         border: $brown solid 5px;
         &--sanpham {

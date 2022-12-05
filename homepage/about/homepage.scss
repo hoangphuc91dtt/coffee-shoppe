@@ -60,7 +60,9 @@ a {
         background-color: $beeBg;
         position: relative;
         background-attachment: fixed;
-        background-image: url("./img/bg-image.png");
+        // background-image: url("./img/bg-image.png");
+        background-image: url("./img/bg-login.jpg");
+
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -269,6 +271,26 @@ a {
                 transform: scale(1.02);
                 transition: 0.5s;
             }
+        }
+    }
+    &__endfoot {
+        background-image: url("./img/bg-author.png");
+        padding: 48px 80px 56px 80px;
+
+        @include displayFlexCenter(center, space-between);
+        color: $brown;
+    }
+    &__address {
+        color: $brown;
+    }
+    &__mxh {
+        height: 40px;
+        @include displayFlexCenter(center, center, 24px);
+        color: $brown;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }
