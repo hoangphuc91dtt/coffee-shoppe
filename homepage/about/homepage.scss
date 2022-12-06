@@ -46,11 +46,14 @@ a {
     position: relative;
     &__navbar {
         width: 100%;
-        height: 100px;
+        height: 106px;
         padding: 36px 135px;
         z-index: 10000;
         position: fixed;
-        background-color: $lement;
+        background-image: url("../../img/bg-image-about.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
         @include displayFlexCenter(flex-start, space-between, 32px);
     }
     &__hero {
@@ -61,7 +64,6 @@ a {
         background-color: $beeBg;
         position: relative;
         background-attachment: fixed;
-        // background-image: url("./img/bg-image.png");
         background-image: url("./img/bg-login.jpg");
 
         background-repeat: no-repeat;

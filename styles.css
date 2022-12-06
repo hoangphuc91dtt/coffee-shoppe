@@ -371,11 +371,14 @@ a {
 }
 .homepage__navbar {
   width: 100%;
-  height: 100px;
+  height: 106px;
   padding: 36px 135px;
   z-index: 10000;
   position: fixed;
-  background-color: #ffcb7c;
+  background-image: url("../../img/bg-image-about.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
