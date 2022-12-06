@@ -26,7 +26,7 @@ btnLogin.addEventListener("click", (e) => {
                     }, 1000);
                 } else {
                     setTimeout(() => {
-                        location.innerHTML = "<h4 >Login faile</h4>";
+                        location.innerHTML = "<h4 >Login fail</h4>";
                         setTimeout(() => {
                             window.location.href = "../login/login.html";
                         }, 2000);

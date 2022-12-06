@@ -57,6 +57,17 @@
   transform: scale(1.2);
   transition: 0.5s;
 }
+.navbar__shop.active {
+  animation: rotateShop 0.5s infinite alternate;
+}
+@keyframes rotateShop {
+  from {
+    transform: rotate(0) scale(1);
+  }
+  to {
+    transform: rotate(15deg) scale(1.2);
+  }
+}
 .navbar__login {
   margin-top: 5px;
   width: 25px;
@@ -96,6 +107,9 @@
   margin-left: 25%;
   border-radius: 8px;
   filter: drop-shadow(6px 5px 2px rgba(0, 0, 0, 0.25));
+}
+.navbar__giohang--name {
+  width: 62px;
 }
 .navbar__giohang--image {
   width: 100px;
@@ -147,6 +161,7 @@
   line-height: 27px;
   margin-bottom: 32px;
   cursor: pointer;
+  margin: 0 auto;
 }
 .popular__btn-showmore:hover {
   transform: scale(1.05);
@@ -356,10 +371,11 @@ a {
 }
 .homepage__navbar {
   width: 100%;
-  height: 80px;
+  height: 100px;
   padding: 36px 135px;
   z-index: 10000;
   position: fixed;
+  background-color: #ffcb7c;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -751,6 +767,10 @@ section {
   to {
     transform: scale(1.05);
   }
+}
+.item:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
 }
 
 /*# sourceMappingURL=styles.css.map */

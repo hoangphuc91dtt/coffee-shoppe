@@ -132,6 +132,10 @@ function muahang() {
         btn.addEventListener("click", () => {
             const idCard = btn.getAttribute("card-id");
             getCoffeeId(idCard);
+            btnshop.classList.add("active");
+            setTimeout(() => {
+                btnshop.classList.remove("active");
+            }, 2000);
         });
     });
 }
@@ -142,6 +146,10 @@ function muahangBestCoffee() {
         btn.addEventListener("click", () => {
             const idCard = btn.getAttribute("card-idBest");
             getBestCoffeeId(idCard);
+            btnshop.classList.add("active");
+            setTimeout(() => {
+                btnshop.classList.remove("active");
+            }, 2000);
         });
     });
 }
