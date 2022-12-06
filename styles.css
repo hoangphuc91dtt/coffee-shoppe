@@ -57,6 +57,23 @@
   transform: scale(1.2);
   transition: 0.5s;
 }
+.navbar__shop.active {
+  animation: rotateShop 0.5s infinite alternate;
+}
+@keyframes rotateShop {
+  from {
+    transform: rotate(0) scale(1);
+  }
+  to {
+    transform: rotate(15deg) scale(1.2);
+  }
+}
+.navbar__login {
+  margin-top: 5px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
 .navbar__giohang {
   width: 450px;
   height: 220px;
@@ -66,7 +83,7 @@
   border-radius: 20px;
   padding: 10px 20px 10px 10px;
   overflow-y: scroll;
-  background-image: url(../../img/bg-image-about.png);
+  background-image: url(./img/bg-image-about.png);
   background-size: cover;
   border: #2f2105 solid 5px;
 }
@@ -90,6 +107,9 @@
   margin-left: 25%;
   border-radius: 8px;
   filter: drop-shadow(6px 5px 2px rgba(0, 0, 0, 0.25));
+}
+.navbar__giohang--name {
+  width: 62px;
 }
 .navbar__giohang--image {
   width: 100px;
@@ -141,6 +161,7 @@
   line-height: 27px;
   margin-bottom: 32px;
   cursor: pointer;
+  margin: 0 auto;
 }
 .popular__btn-showmore:hover {
   transform: scale(1.05);
@@ -350,10 +371,14 @@ a {
 }
 .homepage__navbar {
   width: 100%;
-  height: 80px;
+  height: 106px;
   padding: 36px 135px;
   z-index: 10000;
   position: fixed;
+  background-image: url("../../img/bg-image-about.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -367,7 +392,7 @@ a {
   background-color: rgb(246, 235, 218);
   position: relative;
   background-attachment: fixed;
-  background-image: url("./img/bg-image.png");
+  background-image: url("./img/bg-login.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -686,6 +711,34 @@ a {
   transform: scale(1.02);
   transition: 0.5s;
 }
+.footer__endfoot {
+  background-image: url("./img/bg-author.png");
+  background-size: cover;
+  padding: 48px 80px 56px 80px;
+  border-radius: 50px 0px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  color: #2f2105;
+}
+.footer__address {
+  color: #2f2105;
+}
+.footer__mxh {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  color: #2f2105;
+  cursor: pointer;
+}
+.footer__mxh img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .active {
   color: #ff912b;
@@ -717,6 +770,10 @@ section {
   to {
     transform: scale(1.05);
   }
+}
+.item:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
 }
 
 /*# sourceMappingURL=styles.css.map */
