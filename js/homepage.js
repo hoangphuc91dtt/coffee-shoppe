@@ -9,7 +9,7 @@ const btnshop = document.querySelector(".navbar__shop");
 const btnYourCoffee = document.querySelector(".about__content--btn-get");
 const showMore_btn = document.querySelector(".popular__btn-showmore");
 
-function renderCoffeebest() {
+function renderCoffeeBest() {
     fetch("https://6369cb9028cd16bba72488d3.mockapi.io/coffee-food")
         .then((res) => res.json())
         .then((data) => {
@@ -251,10 +251,10 @@ function showMoreCard() {
         cardsMenu.classList.toggle("show1");
     });
 }
-
+// main
 function homepage() {
     navbarActive();
-    renderCoffeebest();
+    renderCoffeeBest();
     renderCoffee();
     renderUser();
     giohang();
